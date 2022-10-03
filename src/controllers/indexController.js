@@ -1,6 +1,5 @@
 const { pool } = require("../../config/database");
-//pool : 우리가 만들어 놓은 mysql에 접근할 수 있는 객체
-//라이브러리를 써서 db에 접근 할 수 있게 해 놓은거락 보면 됨
+
 const { logger } = require("../../config/winston");
 const jwt = require("jsonwebtoken");
 const secret = require("../../config/secret");
@@ -16,53 +15,14 @@ const output = {
         return res.render('main/login2.ejs');
     },
 
-     main : async function(req,res){
-        return res.render('main/select2.ejs');
-    },
+    reservation : async function(req,res){
+      return res.render('reservation/reservation_h.ejs');
+  },
+
 
 }
 
-//const hospital = {
-//   hospital_eye : async function(req,res){
-//     return res.render('hospital/hospital_eye.ejs');
-//  },
 
-//   hospital_hb : async function(req,res){
-//     return res.render('hospital/hospital_hb.ejs');
-//   },
-
-//   hospital_jh : async function(req,res){
-//     return res.render('hospital/hospital_jh.ejs');
-//   },
-
-//   hospital_n : async function(req,res){
-//     return res.render('hospital/hospital_n.ejs');
-//   },
-
-//   hospital_no : async function(req,res){
-//     return res.render('hospital/hospital_no.ejs');
-//   },
-//   hospital_sk : async function(req,res){
-//     return res.render('hospital/hospital_sk.ejs');
-//   },
-
-//   hospital_skin : async function(req,res){
-//     return res.render('hospital/hospital_skin.ejs');
-//   },
-
-//   hospital_t : async function(req,res){
-//     return res.render('hospital/hospital_t.ejs');
-//   },
-//}
-
-const hospital = async function(req,res){
-  return res.render('hospital/hospital.ejs');
-}
-
-const pharmacy = async function(req,res){
-  return res.render('pharmacy/pharmacy.ejs');
-}
-// ---------------
 const process = {
     createJwt : async function(req,res){
       const {userID, password} = req.body;
@@ -210,5 +170,5 @@ const readJwt = async function(req,res){
 }
 
 module.exports = {
-    output, process, hospital, readUsers, readJwt, pharmacy
+  readJwt, readUsers, output, process,
 }
