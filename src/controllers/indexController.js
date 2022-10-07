@@ -76,8 +76,9 @@ const process = {
 
 
   signup : async function(req,res){
-      const {hosID, hosName, password, hosAddress1, hosAddress2, hosNumber} = req.body;
-      console.log(hosID, hosName, password, hosAddress1, hosAddress2, hosNumber);
+    console.log(req.body);  
+    const {hosID, hosName, password, hosAddress1, hosAddress2, hosNumber} = req.body;  
+    console.log(hosID, hosName, password, hosAddress1, hosAddress2, hosNumber);
     // DB에 insert
       try {
         const connection = await pool.getConnection(async (conn) => conn);
@@ -87,9 +88,9 @@ const process = {
             hosID, hosName, password, hosAddress1, hosAddress2, hosNumber
             );
             //console.log(rows);
-            const userIdx=rows.insertId;
+            const hosIdx=rows.insertId;
             const token = jwt.sign(
-              {userIdx: userIdx, userName: userName},
+              {hosIdx: hosIdx, hosName: hosName},
               secret.jwtsecret
             );
             

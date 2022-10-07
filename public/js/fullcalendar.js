@@ -14,3 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render();
 });
 
+function refreshPage(){
+    window.location.reload();
+} 
+
+// 로그아웃 버튼 이벤트 연결
+const btnSignOut = document.querySelector("#sign-out");
+btnSignOut.addEventListener("click",signOut);
+// 로그아웃
+function signOut(event){
+    localStorage.removeItem("x-access-token");
+    location.replace("/login");
+}

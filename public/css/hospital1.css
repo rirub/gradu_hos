@@ -7,6 +7,35 @@
     margin-top: 1px;
     text-align: center;
 }
+#oname{
+    margin-top: 0px;
+    text-align: center;
+    color: black;
+    font-size: 13px;
+}
+#nname{
+    color: white;
+}
+#sign-out{
+    margin-left: 13px;
+    border-radius: 5px;
+    background-color: rgb(33,37,41);
+    color: white;
+}
+.content{
+    margin-left: 850px;
+    align-items: center;
+    justify-content: center ;
+}
+
+#direct{
+    font-size: 8px;
+}
+#sign-out:hover{
+    color: black;
+    background-color: gray;
+}
+
 .container1{
     min-height: calc(100vh - 250px);
 }
@@ -23,7 +52,7 @@ strong{
     border-radius: 4px;
     width:95px;
     height:35px;
-    margin-left: 700px;
+    margin-left: 850px;
 }
 #id2{
     border-radius: 4px;

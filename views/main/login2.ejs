@@ -19,22 +19,14 @@
     <!--Header 부분-->
     <header class="p-3 text-bg-white">
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                
-            </div>
-            
-            <!--<div class="text-end">
-                <button type="button" class="btn btn-outline-dark me-2">Login</button>
-                <button type="button" class="btn btn-dark" id="signup">Sign-up</button>
-            </div>-->
-
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li id="title"><a href="http://127.0.0.1:5501/hospital1.html" class="nav-link px-2 text-dark">
+                <li id="title"><a href="#;" onclick="refreshPage()" class="nav-link px-2 text-dark">
                     <i id='mark'class="fa-solid fa-graduation-cap"></i>
                     <strong>2022 졸업작품</strong>
                     <i id='mark'class="fa-solid fa-graduation-cap"></i>
                 </a></li>
             </ul>
+            <div id="oname">  20192564 강은영, 20192568 공령휘  </div>
             </div>
         </div>
     </header>
@@ -42,7 +34,7 @@
     <!--Navigation bar 부분-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
         <div class="container">
-        <a class="navbar-brand" href="./hospital1.html">
+        <a class="navbar-brand" href="#" onclick="refreshPage()">
             <i class="fa-solid fa-house text-white"></i>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,19 +44,17 @@
         <div class="collapse navbar-collapse" id="navbarsExample07">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#">Hospital</a>
+                <a class="nav-link active text-white" aria-current="page" href="javascript:void(0);" onclick="alert('로그인이 필요합니다.')">Hospital</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Pharmacy</a>
-            </li>
+            
 
-            <!--<li class="nav-item" id="id1">
-                <a class="nav-link text-white" href="http://127.0.0.1:5501/login2.html"><i class="fa-solid fa-square" id="squ"></i>Login</a>
+            <li class="nav-item" id="id1" style="margin-left: 950px;">
+                <a class="nav-link text-white" href="#;" onclick="refreshPage()"><i class="fa-solid fa-square" id="squ"></i>Login</a>
                 
             </li>
             <li class="nav-item" id="id2">
-                <a class="nav-link text-white" href="http://127.0.0.1:5501/signup.html"><i class="fa-solid fa-square" id="squ"></i>Sign-up</a>
-            </li>-->
+                <a class="nav-link text-white" href="/signup"><i class="fa-solid fa-square" id="squ"></i>Sign-up</a>
+            </li>
 
         </div>
         </div>
@@ -73,13 +63,6 @@
     <!--Body 부분-->
     <div class="container1">
         <div class="h3 border-bottom border-secondary" id="h1">로그인</div>
-
-        <!--<p class="login">
-            Hello <br>
-            Thank you for visiting our page.
-            <br>
-        <em>You need to log in to use the membership service.</em>
-        </p>-->
 
         <div class="form-floating" id="log">
             <input id="id" type="text" class="form-control" placeholder="ID">
@@ -90,14 +73,10 @@
             <!--  id="floatingInput" id="floatingPassword" -->
             <label for="floatingPassword">비밀번호를 입력하세요.</label>
         </div>
-        <!--<div class="checkbox mb-3">
-            <label>
-            <input type="checkbox" value="remember-me"> 아이디 저장
-            </label>
-        </div>-->
+        
         <button class="w-30 btn btn-lg btn-dark text-white" type="submit" id="loginBtn">로그인</button>
-        <a href="#;" id="gosignup">회원가입하러 가기 (User)▶</a>
-        <!-- <a href="./signup.html" id="gosignup2">회원가입하러 가기 (Hospital/Pharmacy)▶</a> -->
+        <a href="/signup" id="gosignup">회원가입하러 가기 (Hospital)▶</a>
+        
     </div>
 
     <!--Footer 부분-->

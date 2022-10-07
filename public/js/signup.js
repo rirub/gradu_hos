@@ -1,15 +1,40 @@
 "use strict";
 
-const hosID = document.querySelector("#userID");
-const hosName = document.querySelector("#userName");
+const hosID = document.querySelector("#hosID");
+const hosName = document.querySelector("#hosName");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
-const hosAddress1 = document.querySelector("#userAddress1");
-const hosAddress2 = document.querySelector("#userAddress2");
-const hosNumber = document.querySelector("#userNumber");
+const hosAddress1 = document.querySelector("#hosAddress1");
+const hosAddress2 = document.querySelector("#hosAddress2");
+const hosNumber = document.querySelector("#hosNumber");
+
 const signupBtn = document.querySelector("#signupBtn");
 
-signupBtn.addEventListener("click",hossignup);
+// var radios = document.getElementsByName('category');
+// radios.addEventListener("click", cate_checked);
+//var category_cheked;
+
+signupBtn.addEventListener("click",signup);
+
+var category = document.getElementsByName('category');
+var categorySelected; // 여기에 선택된 radio 버튼의 값이 담기게 된다.
+for(var i=0; i<category.length; i++) {
+    if(category[i].checked) {
+        categorySelected = category[i].value;
+        console.log(categorySelected);
+    }
+}
+
+
+
+// 로그아웃 버튼 이벤트 연결
+// const btnSignOut = document.querySelector("#sign-out");
+// btnSignOut.addEventListener("click",signOut);
+// // 로그아웃
+// function signOut(event){
+//     localStorage.removeItem("x-access-token");
+//     location.replace("/login");
+// }
 
 var psword = 0;
 
@@ -34,6 +59,10 @@ function check(){
     
 }
 
+function refreshPage(){
+    window.location.reload();
+} 
+
 function is_checked(){
     var checkbox = document.getElementById('flexCheckDefault');
     var is_ck = checkbox.checked;
@@ -48,23 +77,48 @@ function is_checked(){
     }
     else{
         return true;
-    }
-
-    
+    }   
 }
 
+// function cate_checked() {
+//     var obj_length = document.getElementsByName("category").length;
+//     for (var i=0; i<obj_length; i++) {
+//         category_cheked = document.getElementsByName("category")[i].value;
+//         console.log(category_cheked);
+//         if (document.getElementsByName("category")[i].checked == true) {
+//            console.log(document.getElementsByName("category")[i].value);
+//            //console.log(category_cheked);
+
+//         }
+//     }
+// }
 
 
-function hossignup(){
+
+// function cate_checked(){
+//     for (var i = 0, length = radios.length; i < length; i++) {
+//         if (radios[i].checked) {
+//             // do whatever you want with the checked radio
+//             alert(radios[i].value);
+
+//             // only one radio can be logically checked, don't check the rest
+//             break;
+//         }
+//     }
+//     return true;
+// }
+
+
+function signup(){
    const req = {
     hosID : hosID.value,
     hosName: hosName.value,
     password :password.value,
-    hosAddress1: hosAddress1.value,
-    hosAddress2: hosAddress2.value,
+    // categorySelected : categorySelected,
+    hosAddress1 : hosAddress1.value,
+    hosAddress2 : hosAddress2.value,
     hosNumber: hosNumber.value,
    };
-   
    console.log(req);
 
    fetch("/signup",{
@@ -85,4 +139,3 @@ function hossignup(){
     return location.replace("/login");
   });
 }
-

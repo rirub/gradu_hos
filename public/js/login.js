@@ -5,6 +5,10 @@ const loginBtn = document.querySelector("#loginBtn");
 
 loginBtn.addEventListener("click",login);
 
+function refreshPage(){
+    window.location.reload();
+} 
+
 function login(){
 
     if(id.value.length<1 || password.value.length<1){
