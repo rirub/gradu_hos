@@ -1,5 +1,5 @@
 "use strict";
-const userID = document.querySelector("#id");
+const hosID = document.querySelector("#id");
 const password = document.querySelector("#pw");
 const loginBtn = document.querySelector("#loginBtn");
 
@@ -18,7 +18,7 @@ function login(){
     // 로그인 api 요청
 
     const req = {
-        userID : userID.value,
+        hosID : hosID.value,
         password :password.value,
        };
        console.log(req);
@@ -38,7 +38,7 @@ function login(){
            const jwt = data.result.jwt;
            localStorage.setItem("x-access-token",jwt);
            alert(data.message);
-           return location.replace("/main");
+           return location.replace("/reservation");
         });
 
        

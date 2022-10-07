@@ -18,10 +18,10 @@ exports.selectUsers = async function (connection, params) {
   return rows;
 };
 
-exports.isValidUsers = async function (connection, userID,password) {
-  const Query = `select userIdx, userName from user WHERE userID = ? and password = ? and status='A';`;
+exports.isValidUsers = async function (connection, hosID,password) {
+  const Query = `select hosIdx, hosName from hospitals WHERE hosID = ? and password = ? and status='A';`;
   
-  const Params = [userID,password];
+  const Params = [hosID,password];
 
   const rows = await connection.query(Query, Params);
 

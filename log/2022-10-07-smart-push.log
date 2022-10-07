@@ -80,3 +80,12 @@
 {"level":"error","message":"insertUsers Query error\n: {\"message\":\"Field 'category' doesn't have a default value\",\"code\":\"ER_NO_DEFAULT_FOR_FIELD\",\"errno\":1364,\"sql\":\"insert into hospitals(hosID, hosName, password, hosAddress1, hosAddress2, hosNumber) values('yeonsei_jh','연세성모정형외과의원','1234','서울 관악구 봉천동 42-42','서울 관악구 관악로 233','02-882-4530');\",\"sqlState\":\"HY000\",\"sqlMessage\":\"Field 'category' doesn't have a default value\"}","timestamp":"2022-10-07 17:24:31"}
 {"level":"error","message":"createUsers Query error\n: {\"message\":\"Field 'category' doesn't have a default value\",\"code\":\"ER_NO_DEFAULT_FOR_FIELD\",\"errno\":1364,\"sql\":\"insert into hospitals(hosID, hosName, password, hosAddress1, hosAddress2, hosNumber) values('yeonsei_jh','연세성모정형외과의원','1234','서울 관악구 봉천동 42-42','서울 관악구 관악로 233','02-882-4530');\",\"sqlState\":\"HY000\",\"sqlMessage\":\"Field 'category' doesn't have a default value\"}","timestamp":"2022-10-07 17:24:31"}
 {"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 17:29:47"}
+{"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 18:02:08"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-10-07 18:02:31"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-10-07 18:02:39"}
+{"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 18:02:50"}
+{"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 18:03:51"}
+{"level":"error","message":"createJwt Query error\n: {\"message\":\"Unknown column 'userIdx' in 'field list'\",\"code\":\"ER_BAD_FIELD_ERROR\",\"errno\":1054,\"sql\":\"select userIdx, userName from hospitals WHERE hosID = 'yonsei_jh' and password = '1234' and status='A';\",\"sqlState\":\"42S22\",\"sqlMessage\":\"Unknown column 'userIdx' in 'field list'\"}","timestamp":"2022-10-07 18:04:07"}
+{"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 18:04:51"}
+{"level":"error","message":"createJwt Query error\n: {\"message\":\"Unknown column 'userName' in 'field list'\",\"code\":\"ER_BAD_FIELD_ERROR\",\"errno\":1054,\"sql\":\"select hosIdx, userName from hospitals WHERE hosID = 'yonsei_jh' and password = '1234' and status='A';\",\"sqlState\":\"42S22\",\"sqlMessage\":\"Unknown column 'userName' in 'field list'\"}","timestamp":"2022-10-07 18:05:01"}
+{"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 18:05:19"}

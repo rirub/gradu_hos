@@ -25,8 +25,8 @@ const output = {
 
 const process = {
     createJwt : async function(req,res){
-      const {userID, password} = req.body;
-      if(!userID || !password){
+      const {hosID, password} = req.body;
+      if(!hosID || !password){
         return res.send({
           isSuccess: false,
           code: 400,
@@ -36,7 +36,7 @@ const process = {
     try{
       const connection = await pool.getConnection(async (conn)=>conn);
       try{
-        const [rows]=await indexDao.isValidUsers(connection, userID, password);
+        const [rows]=await indexDao.isValidUsers(connection, hosID, password);
         console.log(rows);
         //DB 회원 검증
         if(rows.length <1){
@@ -47,11 +47,11 @@ const process = {
           });
         }
         //login pw 확인 알고리즘 추가하기
-        const {userIdx, userName} = rows[0];
+        const {hosIdx, hosName} = rows[0];
 
         const token = jwt.sign(
-          {userIdx: userIdx,
-          userName: userName},
+          {hosIdx: hosIdx,
+            hosName: hosName},
           secret.jwtsecret
           );  
         return res.send({
