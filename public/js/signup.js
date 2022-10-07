@@ -1,12 +1,15 @@
 "use strict";
 
-const userID = document.querySelector("#userID");
-const userName = document.querySelector("#userName");
+const hosID = document.querySelector("#userID");
+const hosName = document.querySelector("#userName");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
+const hosAddress1 = document.querySelector("#userAddress1");
+const hosAddress2 = document.querySelector("#userAddress2");
+const hosNumber = document.querySelector("#userNumber");
 const signupBtn = document.querySelector("#signupBtn");
-console.log(password.value);
-signupBtn.addEventListener("click",signup);
+
+signupBtn.addEventListener("click",hossignup);
 
 var psword = 0;
 
@@ -52,12 +55,16 @@ function is_checked(){
 
 
 
-function signup(){
+function hossignup(){
    const req = {
-    userID : userID.value,
-    userName: userName.value,
+    hosID : hosID.value,
+    hosName: hosName.value,
     password :password.value,
+    hosAddress1: hosAddress1.value,
+    hosAddress2: hosAddress2.value,
+    hosNumber: hosNumber.value,
    };
+   
    console.log(req);
 
    fetch("/signup",{

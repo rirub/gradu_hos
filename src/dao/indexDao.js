@@ -1,8 +1,8 @@
 const { pool } = require("../../config/database");
 
-exports.insertUsers = async function (connection, userID, userName, password) {
-  const Query = `insert into user(userID,userName,password) values(?,?,?);`;
-  const Params = [userID,userName,password];
+exports.insertUsers = async function (connection, hosID, hosName, password, hosAddress1, hosAddress2, hosNumber) {
+  const Query = `insert into hospitals(hosID, hosName, password, hosAddress1, hosAddress2, hosNumber) values(?,?,?,?,?,?);`;
+  const Params = [hosID, hosName, password, hosAddress1, hosAddress2, hosNumber];
 
   const rows = await connection.query(Query, Params);
 
@@ -10,7 +10,7 @@ exports.insertUsers = async function (connection, userID, userName, password) {
 };
 
 exports.selectUsers = async function (connection, params) {
-  const Query = `select * from user`;
+  const Query = `select * from hospitals`;
   const Params = [];
 
   const rows = await connection.query(Query, Params);

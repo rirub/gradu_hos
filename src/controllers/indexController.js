@@ -76,17 +76,15 @@ const process = {
 
 
   signup : async function(req,res){
-      const {userID, userName, password} = req.body;
-      console.log(userID, userName, password);
+      const {hosID, hosName, password, hosAddress1, hosAddress2, hosNumber} = req.body;
+      console.log(hosID, hosName, password, hosAddress1, hosAddress2, hosNumber);
     // DB에 insert
       try {
         const connection = await pool.getConnection(async (conn) => conn);
         try {
           const [rows] = await indexDao.insertUsers(
             connection,
-            userID,
-            userName, 
-            password
+            hosID, hosName, password, hosAddress1, hosAddress2, hosNumber
             );
             //console.log(rows);
             const userIdx=rows.insertId;
@@ -114,7 +112,7 @@ const process = {
       try {
         const connection = await pool.getConnection(async (conn)=> conn);
         try {
-        const [rows] = await indexDao.insertUsers(connection, userID, userName, password);
+        const [rows] = await indexDao.insertUsers(connection, hosID, hosName, password, hosAddress1, hosAddress2, hosNumber);
 
   
       } catch(err){
