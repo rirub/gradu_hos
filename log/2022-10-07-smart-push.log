@@ -89,3 +89,4 @@
 {"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 18:04:51"}
 {"level":"error","message":"createJwt Query error\n: {\"message\":\"Unknown column 'userName' in 'field list'\",\"code\":\"ER_BAD_FIELD_ERROR\",\"errno\":1054,\"sql\":\"select hosIdx, userName from hospitals WHERE hosID = 'yonsei_jh' and password = '1234' and status='A';\",\"sqlState\":\"42S22\",\"sqlMessage\":\"Unknown column 'userName' in 'field list'\"}","timestamp":"2022-10-07 18:05:01"}
 {"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 18:05:19"}
+{"level":"info","message":"API server start at port 3000","timestamp":"2022-10-07 20:50:09"}
