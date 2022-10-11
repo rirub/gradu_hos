@@ -28,6 +28,14 @@ exports.isValidUsers = async function (connection, hosID,password) {
   return rows;
 };
 
+exports.selectInfo = async function (connection, hosIdx) {
+  const Query = `select * from reservation where hosIdx = ?`;
+  const Params = [hosIdx];
+
+  const rows = await connection.query(Query, Params);
+
+  return rows;
+};
 
 // exports.insertHospital = async function (connection, userID, userName, password) {
 //   const Query = `insert into user(userID,userName,password) values(?,?,?);`;

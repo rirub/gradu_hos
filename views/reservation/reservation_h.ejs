@@ -8,7 +8,12 @@
     <script src="https://kit.fontawesome.com/15a9419d1c.js" crossorigin="anonymous"></script>
     <link href="/css/hospital1.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/reservation_h.css">
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bPopup/0.11.0/jquery.bpopup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href='/css/main.css' type="text/css" rel='stylesheet' />
+    
     <script src='/js/main.js'></script>
     
     <title>Document</title>
@@ -44,10 +49,10 @@
                 <a class="nav-link active text-white" aria-current="page" href="#;" onclick="refreshPage()">Hospital</a>
             </li>
             
-            <div class="content" style="display: flex; margin-left: 950px;">
+            <div class="content" style="display: flex; margin-left: 900px;">
                 <li class="nav-item" id="nname">
                     <i class="fa-solid fa-user"></i>
-                    <span class="nickname">fudgnl2</span> 님
+                    <span class="nickname"></span> 님
                 </li>
                 <li class="nav-item" id="logout">
                     <button id="sign-out">로그아웃 &nbsp;<span id="direct">▷</span></div>
@@ -59,12 +64,14 @@
         </div>
         </div>
     </nav>
+
     <div class="container1">
         <div class="h3 border-bottom border-secondary" id="h1">예약 현황</div>
         
         <div class="container2">
             <div id='calendar'></div> <!-- fullcalendar -->
-
+            <div id="popup" style="width: 300px; height: 400px; display:none; background-color:rgb(33,37,41); padding: 20px;
+            border-radius: 10px;"></div>
         </div>
     </div>
 
@@ -87,6 +94,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src='/js/fullcalendar.js'></script>
+    <script src='/js/header.js'></script>
 </body>
 
 </html>

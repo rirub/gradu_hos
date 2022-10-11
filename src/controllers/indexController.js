@@ -156,18 +156,54 @@ const readUsers = async function(req,res){
         logger.error(`readusers DB Connection error\n: ${JSON.stringify(err)}`);
         return false;
       }
+
+
+
 };
 
 const readJwt = async function(req,res){
-  const { userIdx, userName } = req.verifiedToken;
+  const { hosIdx, hosName } = req.verifiedToken;
   return res.send({
-    result: {userIdx: userIdx, userName:userName},
+    result: {hosIdx: hosIdx, hosName:hosName},
     code: 200,
     message: "유효한 토큰입니다.",
   });
 
 }
 
+
+
+
+const getInfo = async function(req,res){
+  const {hosIdx} = req.body;
+  try {
+      const connection = await pool.getConnection(async (conn) => conn);
+      try {
+        const [rows] = await indexDao.selectInfo(connection,hosIdx);
+      
+        return res.send(
+          {
+          result: rows,
+          isSuccess: true,
+          code: 200, // 요청 실패시 400번대 코드
+          message: "요청 성공",
+        });
+      } catch (err) {
+        logger.error(`selectInfo Query error\n: ${JSON.stringify(err)}`);
+      } finally {
+        connection.release();
+      }
+    } catch (err) {
+      logger.error(`selectInfo DB Connection error\n: ${JSON.stringify(err)}`);
+      return false;
+    }
+};
+
+
+
+
+
+
 module.exports = {
-  readJwt, readUsers, output, process,
+  readJwt, readUsers, output, process, getInfo
 }
