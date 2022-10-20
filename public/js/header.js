@@ -46,8 +46,8 @@ const btnSignout=document.querySelector("#sign-out");
 btnSignout.addEventListener("click",signOut);
 function signOut(){
     localStorage.removeItem("x-access-token");
-    localStorage.removeItem("userIdx");
-     location.reload(); //새로고침
+    localStorage.removeItem("hosIdx");
+    location.replace("/login"); //새로고침
     }
 
     // export {userData};
