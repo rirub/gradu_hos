@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     const printIdx = async () => {  
         idx = await getIdx();  
-       
     
     // calendar 설정
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -84,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // data 받아온 부분
-   
         const req = { hosIdx : idx };    
         fetch("/getInfo",{
             method : "POST",
@@ -109,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         let time = resInfo[i].Time;
                         let str = date.split('T',1);
                         let str2 = [str,time].join('T');
+                        localStorage.setItem(resInfo[i].userName,resInfo[i].userNum);
                         // console.log(str2);
                         // event 달력에 표시
                         calendar.addEvent({
